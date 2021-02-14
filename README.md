@@ -8,3 +8,14 @@ App is protected with username and password (Login with username: admin, passwor
 Used local storage to store data.
 Implemented routing, auth-guard in the project. Responsive bootstrap Design.
 
+# This project was generated with Angular CLI version 11.
+
+# How To install and run this repository in your local machine
+Use git clone or download the folder to your local machine. Then run
+```npm install ```
+to download the required node modules in your downloaded folder. Then start the application using
+```ng serve -o ```
+which opens the application in localhost:4200 and your system requires a recent Node version installed for running above code.
+
+
+
