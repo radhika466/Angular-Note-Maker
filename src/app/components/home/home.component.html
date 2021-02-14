@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+<div class="note-header">
+  <div class="row"><h1 class="note-header-title">All Notes</h1></div>
+  <div class="row">
+    <h4 class="note-header-sub-title">{{ noteList.length }} Notes</h4>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row note-widget-container mb-3">
+    <form class="form-inline my-2 my-lg-0 pl-3">
+      <button
+        routerLink="/notes"
+        class="btn btn-primary btn-primary my-2 my-sm-0 mr-2"
+      >
+        Add Note
+      </button>
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+
+  <div class="row notes-container">
+    <div class="card bg-light mb-4" *ngFor="let note of noteList">
+      <div class="card-header">
+        <div class="card-head-top">
+          <div class="left-block">
+            <span class="note-card-title">{{ note.title }}</span>
+          </div>
+          <div class="right-block">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              (click)="editItem(note.id)"
+            >
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-sm"
+              (click)="deleteItem(note.id)"
+            >
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </div>
+        </div>
+        <div class="note-card-subtitle mt-2">
+          Last modified: {{ note.lastOpenedAt | date: "MMM d, y, h:mm a" }}
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          {{ note.content }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

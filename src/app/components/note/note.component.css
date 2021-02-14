@@ -1,0 +1,38 @@
+.notes-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-basis: 80%;
+}
+
+.note-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note-header .row {
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.subtitle button {
+  border: none;
+}
+
+@media (max-width: 960px) {
+  .notes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

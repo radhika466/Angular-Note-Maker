@@ -1,0 +1,49 @@
+<div class="container">
+  <form #formData="ngForm" class="form-signin mt-5 pt-5">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Please Sign in</h1>
+    <label for="Username" class="sr-only">Username</label>
+    <input
+      #userName="ngModel"
+      type="text"
+      id="Username"
+      class="form-control mb-2"
+      placeholder="Username"
+      [(ngModel)]="username"
+      name="username"
+      required
+      autofocus
+      [ngClass]="{
+        'is-invalid': userName.touched && !userName.valid
+      }"
+    /><small
+      class="text-danger mb-2"
+      [class.d-none]="userName.untouched || userName.dirty"
+      >Please enter valid username</small
+    >
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      #userPassword="ngModel"
+      type="password"
+      id="password"
+      class="form-control mb-2"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      [class.is-invalid]="userPassword.touched && !userName.valid"
+      required
+    />
+    <small
+      class="text-danger mb-2"
+      [class.d-none]="userPassword.untouched || userPassword.dirty"
+      >Please enter password</small
+    >
+    <button
+      [disabled]="formData.form.invalid"
+      (click)="login()"
+      class="btn btn-lg btn-primary btn-block"
+      type="submit"
+    >
+      Sign in
+    </button>
+  </form>
+</div>
