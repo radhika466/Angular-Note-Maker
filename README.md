@@ -6,11 +6,11 @@ You can note down text in the app and view it upon returning to the window, edit
 The notes are organized according to the dates when users have last updated them. \
 App is protected with username and password (Login with username: admin, password:admin )\
 Used local storage to store data.\
-Implemented routing, auth-guard in the project. Responsive bootstrap Design.\
-
+Implemented routing, auth-guard in the project. Responsive bootstrap Design with css flex concepts.
 
 
 # How To install and run this repository in your local machine
+
 Use git clone or download the folder to your local machine. \
 Then run ```npm install ```\
 to download the required node modules in your downloaded folder. \
