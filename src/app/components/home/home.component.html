@@ -3,7 +3,9 @@
 <div class="note-header">
   <div class="row"><h1 class="note-header-title">All Notes</h1></div>
   <div class="row">
-    <h4 class="note-header-sub-title">{{ noteList.length }} Notes</h4>
+    <h4 class="note-header-sub-title" *ngIf="noteList?.length > 0">
+      {{ noteList?.length }} Notes
+    </h4>
   </div>
 </div>
 
@@ -19,10 +21,16 @@
       <input
         class="form-control mr-sm-2"
         type="search"
+        name="search"
+        [(ngModel)]="searchValue"
         placeholder="Search"
         aria-label="Search"
       />
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+      <button
+        class="btn btn-outline-primary my-2 my-sm-0"
+        type="button"
+        (click)="searchNote()"
+      >
         Search
       </button>
     </form>

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   constructor(private storage: NotestorageService, private router: Router) {}
   noteList;
+  searchValue: string;
 
   ngOnInit(): void {
     this.getNoteList();
@@ -25,5 +26,9 @@ export class HomeComponent implements OnInit {
 
   deleteItem(id) {
     this.noteList = this.storage.destroy(id);
+  }
+
+  searchNote() {
+    this.noteList = this.storage.search(this.searchValue);
   }
 }

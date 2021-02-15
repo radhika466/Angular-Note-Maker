@@ -94,6 +94,13 @@ export class NotestorageService {
     return this.update();
   }
 
+  //search an item with title
+  search(itemValue) {
+    return this.noteList.filter((x) =>
+      x.title.toLowerCase().includes(itemValue.toLowerCase())
+    );
+  }
+
   private update() {
     localStorage.setItem(storageName, JSON.stringify(this.noteList));
     return this.get();
