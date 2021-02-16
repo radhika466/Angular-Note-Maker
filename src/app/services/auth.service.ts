@@ -11,16 +11,16 @@ interface myData {
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
-
+  // to set logged in status,
   private loggedInStatus = JSON.parse(
     localStorage.getItem('loggedIn') || 'false'
   );
-
+  // to set loggedin user status
   setLoggedIn(value: boolean) {
     this.loggedInStatus = value;
     localStorage.setItem('loggedIn', value.toString());
   }
-
+  // to check whether logged in or not
   get isLoggedIn() {
     return JSON.parse(localStorage.getItem('loggedIn') || this.loggedInStatus);
   }

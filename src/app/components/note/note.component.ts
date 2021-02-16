@@ -42,10 +42,10 @@ export class NoteComponent implements OnInit {
   }
 
   saveNote() {
-    this.itemId ? this.updateNote() : this.editNote();
+    this.itemId ? this.updateNote() : this.addNote();
   }
 
-  editNote() {
+  addNote() {
     const item = {
       title: this.noteListItem.title,
       content: this.noteListItem.content,
